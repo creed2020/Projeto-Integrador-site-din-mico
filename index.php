@@ -13,7 +13,7 @@ $menu = "";
 
 // Aponta para o CSS "desta" página. Ex.: /css/contatos.css
 // Deixe vazio para não usar CSS adicional nesta página
-$css = "";
+$css = "/css/index.css";
 
 // Aponta para o JavaScript "desta" página. Ex.: /js/contatos.js
 // Deixe vazio para não usar JavaScript adicional nesta página
@@ -34,9 +34,9 @@ require ('_header.php');
 
 ?>
 
-<h2>Apetitosa</h2>
-<p>Faça seu cadastro para fazer seu pedido.</p>
-<img class="responsiva" src="img/logo01.jpg">
+<div class="index"><h2>Apetitosa</h2>
+<p>Faça seu cadastro para fazer seu pedido.</p></div>
+<center><img class="responsiva" src="img/logo01.jpg">
 
 <?php
 

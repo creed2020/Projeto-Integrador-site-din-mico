@@ -1,6 +1,3 @@
- 
-
-<!-- O CONTEÚDO DA PÁGINA TERMINA AQUI -->
 
 </main>
 
