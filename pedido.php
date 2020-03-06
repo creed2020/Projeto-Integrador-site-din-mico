@@ -40,7 +40,7 @@ require ('_header.php');
 <img class="responsiva" src="img/calabresa.JPG">
 <h2></h2>
 <img class="responsiva" src="img/.JPG">
-<h2>Quatro queijos</h2>
+<h2></h2>
 <img class="responsiva" src="img/.JPG">
 
 <?php
