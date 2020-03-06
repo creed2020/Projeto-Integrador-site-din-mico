@@ -4,14 +4,14 @@
 require ('_config.php');
 
 // Define o título "desta" página
-$titulo = "Faça Cadastro";
+$titulo = "Fale conosco";
 
 // Opção ativa no menu principal
-$menu = "cadastrar";
+$menu = "";
 
 // Aponta para o CSS "desta" página. Ex.: /css/contatos.css
 // Deixe vazio para não usar CSS adicional nesta página
-$css = "/css/cadastrar.css";
+$css = "/css/Faleconosco.css";
 
 // Aponta para o JavaScript "desta" página. Ex.: /js/contatos.js
 // Deixe vazio para não usar JavaScript adicional nesta página
@@ -22,7 +22,7 @@ $js = "";
 /*********************************************/
 
 // "Declarando" variáveis
-$nome = $email = $senha = $endereco = $telefone = $pedido = $erro = $msgErro = $msgOk = $msgMail = '';
+$nome = $email = $assunto = $mensagem = $erro = $msgErro = $msgOk = $msgMail = '';
 
 // Se o formulário foi enviado
 if ( isset($_POST['enviado']) ) :
@@ -33,20 +33,12 @@ if ( isset($_POST['enviado']) ) :
     // Obtém o e-mail do form
     $email = sanitiza( filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL) );
 
-    // Obtém o senha do form
-    $senha = sanitiza( filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_EMAIL) );
+    // Obtém o nome do form
+    $assunto = sanitiza( filter_input(INPUT_POST, 'assunto', FILTER_SANITIZE_STRING) );
 
-    // Obtém o endereço do form
-    $endereco = sanitiza( filter_input(INPUT_POST, 'endereco', FILTER_SANITIZE_STRING) );
-
-    // Obtém o telefone do form
-    $telefone = sanitiza( filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_STRING) );
-
-    // Obtém o pedido do form
-    $pedido = sanitiza( filter_input(INPUT_POST, 'pedido', FILTER_SANITIZE_STRING) );
-
-
-
+    // Obtém o nome do form
+    $mensagem = filter_input(INPUT_POST, 'mensagem', FILTER_SANITIZE_STRING);
+    
     // Verificar o preenchimento do nome
     if (strlen($nome) < 2) {
         $erro .= "<li>Seu nome está muito curto.</li>";
@@ -57,21 +49,15 @@ if ( isset($_POST['enviado']) ) :
     if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
         $erro .= "<li>Seu e-mail parece inválido.</li>";
     }
-    // Verificar o preenchimento do pedido
-    if (strlen($senha) < 4) {
-        $erro .= "<li>A senha está incorreta.</li>";
-    }
-    // Verificar o preenchimento do endereço
-    if (strlen($endereco) < 4) {
-        $erro .= "<li>O endereço está muito curto.</li>";
-    }
-    // Verificar o preenchimento do telefone
-    if (strlen($telefone) < 9) {
+
+    // Verificar o preenchimento do assunto
+    if (strlen($assunto) < 4) {
         $erro .= "<li>O assunto está muito curto.</li>";
     }
-    // Verificar o preenchimento do pedido
-    if (strlen($pedido) < 4) {
-        $erro .= "<li>O assunto está incorreto.</li>";
+    
+    // Verificar o preenchimento da mensagem
+    if (strlen($mensagem) < 4) {
+        $erro .= "<li>A mensagem está muito curta.</li>";
     }
 
     // Validando erros
@@ -79,7 +65,6 @@ if ( isset($_POST['enviado']) ) :
 
         // Cria mensagem de erros. Usamos HEREDOC.
         $msgErro .= <<<TEXTO
-
 <div class="msgErro">
     <h3>Ooooops!</h3>
     <p>Ocorreram erros que impedem o envio do seu contato:</p>
@@ -93,13 +78,11 @@ TEXTO;
         
         // Preparando para salvar os dados
         $sql = <<<SQL
-
 INSERT INTO contatos
-    (nome, email, senha, endereço, telefone)
+    (nome, email, assunto, mensagem)
 VALUES
-    ('{$nome}', '{$email}', '{$senha}', '{$endereco}', '{$telefone}', '{$pedido}')
+    ('{$nome}', '{$email}', '{$assunto}', '{$mensagem}')
 ;
-
 SQL;
 
         // Executa a query gerada em $sql
@@ -107,15 +90,11 @@ SQL;
 
         // Prepara dados para envio por e-mail
         $msgMail .= <<<TEXTO
-
 Um novo contato foi enviado para o site "SemNome":
-
     Nome: {$nome}
     E-mail: {$email}
-    Senha: {$senha}
-    Endereço: {$endereco}
-    Telefone: {$telefone}
-    Pedido: {$pedido}
+    Assunto: {$assunto}
+    Mensagem: {$mensagem}
 TEXTO;
 
         // Enviando e-mail --> Não funciona no XAMPP
@@ -130,14 +109,12 @@ TEXTO;
 
         // Gerando mensagem de agradecimento
         $msgOk .= <<<TEXTO
-
 <div class="msgOk">
     <h3>Olá {$partes[0]}!</h3>
     <p>Seu contato foi enviado para a equipe do site.</p>
     <p>Se necessário, em breve responderemos.</p>
     <p><em>Obrigado...</em></p>
 </div>
-
 TEXTO;
      
     endif;
@@ -156,13 +133,13 @@ require ('_header.php');
 <div class="row">
     <div class="col1">
 
-        <h2>Faça seu Cadastro</h2>
+        <h2>Fale conosco</h2>
 
         <?php
         if ($msgOk == ''):
         ?>
 
-        <p>Preencha o formulário abaixo para fazer seu pedido pelo site.</p>
+        <p>Preencha o formulário abaixo para entrar em contato com a equipe do site.</p>
 
         <?php echo $msgErro ?>
 
@@ -177,20 +154,12 @@ require ('_header.php');
                 <input type="text" name="email" id="email" placeholder="nome@provedor.com" value="<?php echo $email ?>">
             </p>
             <p>
-                <label for="endereço">Endereço:</label>
-                <input type="text" name="endereco" id="endereco" placeholder="Endereço do cliente" value="<?php echo $endereco ?>">
+                <label for="assunto">Assunto:</label>
+                <input type="text" name="assunto" id="assunto" placeholder="Assunto do contato" value="<?php echo $assunto ?>">
             </p>
             <p>
-                <label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone" placeholder="Telefone do cliente" value="<?php echo $telefone ?>">
-            </p>
-            <p>
-                <label for="senha">Digite sua senha:</label>
-                <input type="text" name="senha" id="senha" placeholder="senha do cliente" value="<?php echo $senha ?>">
-            </p>
-            <p>
-                <label for="pedido">Faça seu Pedido:</label>
-                <input type="text" name="pedido" id="pedido" placeholder="pedido do cliente" value="<?php echo $pedido ?>">
+                <label for="mensagem">Mensagem:</label>
+                <textarea name="mensagem" id="mensagem" placeholder="Sua mensagem"><?php echo $mensagem ?></textarea>
             </p>
             <p>
                 <label></label>

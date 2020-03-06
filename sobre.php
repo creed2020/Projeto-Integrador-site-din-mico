@@ -34,9 +34,10 @@ require ('_header.php');
 
 ?>
 
-<h2>Sobre o site</h2>
+<div class="sobre"><h2>Sobre o site</h2>
 <p>O site da Apetitosa é um dos melhores da região. </p>
-<img class="responsiva" src="img/logo02.jpg">
+<p>Nosso endereço é:R. Hanibal Pôrto, 650 - Loja B - Irajá, Rio de Janeiro - RJ, 21230-330 </p></div>
+<center><img class="responsiva" src="img/logo02.jpg">
 
 <?php
 

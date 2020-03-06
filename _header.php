@@ -50,6 +50,7 @@ if ($js != "") {
             <a <?php echo ( $menu == 'cadastrar' ) ? 'class="active"' : null ?> href="/cadastrar.php" id="cadastrar" title="cadastrar no site"><i class="fas fa-address-card"></i><span> cadastrar</span></a>
             <a <?php echo ( $menu == 'faça seu pedido' ) ? 'class="active"' : null ?> href="/pedido.php" id="pedido" <title="Faça seu pedido"><i class="fas fa-address-card"></i><span> Faça seu pedido</span></a>
             <a <?php echo ( $menu == 'sobre' ) ? 'class="active"' : null ?> href="/sobre.php"><i class="fas fa-fw fa-info-circle"></i> Sobre</a>
+            <a <?php echo ( $menu == 'Fale conosco') ? 'class="active"' : null ?> href="/Faleconosco.php"><i class="far fa-address-card"></i> Fale conosco</a>
         </div>
         <a href="#menu" id="menu"><i class="fas fa-fw fa-bars"></i></a>
     </nav>

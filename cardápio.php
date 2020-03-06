@@ -37,13 +37,13 @@ require ('_header.php');
 
 <table width="100%" border="0">
   <tr>
-    <td width="18%" align="center" bgcolor="#FFFF00"><p class="style7">SABOR DA PIZZA<br />
-        <br />
-    </p>    </td>
-    <td width="50%" align="center" bgcolor="#FFFF00"><span class="style7"> INGREDIENTES</span></td>
-    <td width="10%" align="center" bgcolor="#FFFF00"><span class="style7">MEDIA(R$)</span></td>
-    <td width="11%" align="center" bgcolor="#FFFF00"><span class="style7">GRANDE(R$)</span></td>
-    <td width="11%" align="center" bgcolor="#FFFF00"><span class="style7">FAMÍLIA(R$)</span></td>
+    <td width="18%" align="center" bgcolor="#FFFF00"><p class="style7">Sabor da Pizza<br/>
+    <br/>
+    </td>
+    <td width="50%" align="center" bgcolor="#FFFF00"><span class="style7"> Ingredientes</span></td>
+    <td width="10%" align="center" bgcolor="#FFFF00"><span class="style7">Média(R$)</span></td>
+    <td width="11%" align="center" bgcolor="#FFFF00"><span class="style7">Grande(R$)</span></td>
+    <td width="11%" align="center" bgcolor="#FFFF00"><span class="style7">Família(R$)</span></td>
   </tr>
   <tr>
     <td align="center"><span class="style5">Portuguesa</span></td>
@@ -54,10 +54,24 @@ require ('_header.php');
   </tr>
   <tr>
     <td align="center"><span class="style5">4 Queijos</span></td>
-    <td align="center"><span class="style5">Muzarela, oregano, cebola, tomate, presunto etc.</span></td>
+    <td align="center"><span class="style5">4 tipos de queijos, oregano, etc.</span></td>
     <td align="center"><span class="style5">19,90</span></td>
     <td align="center"><span class="style5">23,90</span></td>
     <td align="center"><span class="style5">29,90</span></td>
+  </tr>
+  <tr>
+    <td align="center"><span class="style5">Calabresa</span></td>
+    <td align="center"><span class="style5">Calabresa, oregano, cebola, etc.</span></td>
+    <td align="center"><span class="style5">20,90</span></td>
+    <td align="center"><span class="style5">25,90</span></td>
+    <td align="center"><span class="style5">35,90</span></td>
+  </tr>
+  <tr>
+    <td align="center"><span class="style5">Frango</span></td>
+    <td align="center"><span class="style5">Muzarela, oregano, catupiry, etc.</span></td>
+    <td align="center"><span class="style5">19,99</span></td>
+    <td align="center"><span class="style5">25,90</span></td>
+    <td align="center"><span class="style5">38,90</span></td>
   </tr>
 </table>
 

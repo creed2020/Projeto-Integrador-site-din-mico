@@ -34,9 +34,9 @@ require ('_header.php');
 
 ?>
 
-<h2>Cardápio</h2>
-<p>Calabresa</p>
-<img class="responsiva" src="img/calabresa.jpg">
+<h2></h2>
+<p></p>
+<img class="responsiva" src="img/.jpg">
 
 <?php
 
