@@ -34,15 +34,26 @@ require ('_header.php');
 
 ?>
 
-<h2></h2>
-<p></p>
-<h2></h2>
-<img class="responsiva" src="img/calabresa.JPG">
-<h2></h2>
-<img class="responsiva" src="img/.JPG">
-<h2></h2>
-<img class="responsiva" src="img/.JPG">
-
+<h2>Calabresa</h2>
+<img class="responsiva" src="img/calabresa.jfif">
+<p>Média:R$20,90</p>
+<p>Grande:R$25,90</p>
+<p>Família:R$35,90</p>
+<h2>Portuguesa</h2>
+<img class="responsiva" src="img/portuguesa.jfif">
+<p>Média:R$16,90</p>
+<p>Grande:R$19,90</p>
+<p>Família:R$26,90</p>
+<h2>Quatro queijos</h2>
+<img class="responsiva" src="img/4queijos.jfif">
+<p>Média:R$19,90</p>
+<p>Grande:R$23,90</p>
+<p>Família:R$29,90</p>
+<h2>Frango</h2>
+<img class="responsiva" src="img/frango.jfif">
+<p>Média:R$19,90</p>
+<p>Grande:R$25,90</p>
+<p>Família:R$36,90</p>
 <?php
 
 // Inclui o rodapé do template

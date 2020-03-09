@@ -69,9 +69,9 @@ require ('_header.php');
   <tr>
     <td align="center"><span class="style5">Frango</span></td>
     <td align="center"><span class="style5">Muzarela, oregano, catupiry, etc.</span></td>
-    <td align="center"><span class="style5">19,99</span></td>
+    <td align="center"><span class="style5">19,90</span></td>
     <td align="center"><span class="style5">25,90</span></td>
-    <td align="center"><span class="style5">38,90</span></td>
+    <td align="center"><span class="style5">36,90</span></td>
   </tr>
 </table>
 

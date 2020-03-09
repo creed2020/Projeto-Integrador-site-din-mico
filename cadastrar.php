@@ -4,7 +4,7 @@
 require ('_config.php');
 
 // Define o título "desta" página
-$titulo = "Faça Cadastro";
+$titulo = "Faça Seu Cadastro";
 
 // Opção ativa no menu principal
 $menu = "cadastrar";
